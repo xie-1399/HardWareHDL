@@ -42,3 +42,5 @@ object UseObject extends App{
 
   println(TrafficColor.color.id)
 }
+
+
