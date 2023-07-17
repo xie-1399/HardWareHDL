@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1686658137" />
+    <testcase classname="regtest" file="/data/user/xie/xxl/RiscV/xxl-SpinalLab/src/test/python/usecocotb/regtest.py" lineno="8" name="regtest" ratio_time="4826.272577296698" sim_time_ns="99.501" time="0.020616531372070312" />
+  </testsuite>
+</testsuites>

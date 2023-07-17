@@ -1,0 +1,7 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1687229481" />
+    <testcase classname="test_my_design" file="/data/user/xie/xxl/RiscV/xxl-SpinalLab/src/test/python/usecocotb/demo/test_my_design.py" lineno="5" name="my_first_test" ratio_time="11949.584045584046" sim_time_ns="21.0" time="0.0017573833465576172" />
+    <testcase classname="test_my_design" file="/data/user/xie/xxl/RiscV/xxl-SpinalLab/src/test/python/usecocotb/demo/test_my_design.py" lineno="35" name="my_second_test" ratio_time="8128.496124031008" sim_time_ns="7.0" time="0.0008611679077148438" />
+  </testsuite>
+</testsuites>

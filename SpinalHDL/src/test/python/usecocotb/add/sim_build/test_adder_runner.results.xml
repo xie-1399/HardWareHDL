@@ -1,0 +1,7 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1687230233" />
+    <testcase classname="test_adder" file="/data/user/xie/xxl/RiscV/xxl-SpinalLab/src/test/python/usecocotb/add/test_adder.py" lineno="14" name="adder_basic_test" ratio_time="3202.13746814193" sim_time_ns="2.001" time="0.0006248950958251953" />
+    <testcase classname="test_adder" file="/data/user/xie/xxl/RiscV/xxl-SpinalLab/src/test/python/usecocotb/add/test_adder.py" lineno="31" name="adder_randomised_test" ratio_time="19931.165194583034" sim_time_ns="20.000999999999998" time="0.0010035037994384766" />
+  </testsuite>
+</testsuites>

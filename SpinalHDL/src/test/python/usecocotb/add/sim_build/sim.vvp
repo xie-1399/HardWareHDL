@@ -1,0 +1,40 @@
+#! /usr/local/bin/vvp
+:ivl_version "10.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+:vpi_module "v2009";
+S_0x55704e3b0940 .scope module, "adder" "adder" 2 3;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 4 "A"
+    .port_info 1 /INPUT 4 "B"
+    .port_info 2 /OUTPUT 5 "X"
+P_0x55704e3b0ac0 .param/l "DATA_WIDTH" 0 2 4, +C4<00000000000000000000000000000100>;
+o0x7f2bf5f78018 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0x55704e3b0bb0_0 .net "A", 3 0, o0x7f2bf5f78018;  0 drivers
+o0x7f2bf5f78048 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0x55704e3d0c30_0 .net "B", 3 0, o0x7f2bf5f78048;  0 drivers
+v0x55704e3d0d10_0 .net "X", 4 0, L_0x55704e3d14f0;  1 drivers
+v0x55704e3d0e00_0 .net *"_s0", 4 0, L_0x55704e3d1250;  1 drivers
+L_0x7f2bf5daa018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x55704e3d0ee0_0 .net *"_s3", 0 0, L_0x7f2bf5daa018;  1 drivers
+v0x55704e3d1010_0 .net *"_s4", 4 0, L_0x55704e3d13a0;  1 drivers
+L_0x7f2bf5daa060 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x55704e3d10f0_0 .net *"_s7", 0 0, L_0x7f2bf5daa060;  1 drivers
+L_0x55704e3d1250 .concat [ 4 1 0 0], o0x7f2bf5f78018, L_0x7f2bf5daa018;
+L_0x55704e3d13a0 .concat [ 4 1 0 0], o0x7f2bf5f78048, L_0x7f2bf5daa060;
+L_0x55704e3d14f0 .arith/sum 5, L_0x55704e3d1250, L_0x55704e3d13a0;
+    .scope S_0x55704e3b0940;
+T_0 ;
+    %vpi_call/w 2 15 "$dumpfile", "dump.vcd" {0 0 0};
+    %vpi_call/w 2 16 "$dumpvars", 32'sb00000000000000000000000000000001, S_0x55704e3b0940 {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/data/user/xie/xxl/RiscV/xxl-SpinalLab/src/test/python/usecocotb/add/adder.sv";
