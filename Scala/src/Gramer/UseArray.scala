@@ -3,6 +3,7 @@ package Gramer
 import scala.collection.mutable.ArrayBuffer
 
 //some structures about Array and BufferArray
+//Array can be change, but List can't
 
 object impArray {
   val nums = new Array[Int](10) //init with 0
@@ -45,5 +46,27 @@ object impArray {
   //get more dim matrix
   val matrix = Array.ofDim[Double](3,4)
 }
+
+object impList{
+  //List can not be changed , some ways to create the List
+  val list1 = List(1,2,3)
+  val list2 = list1.drop(2)  //return a new List instead
+  val list3 = (1 to 10 by 2).toList
+
+  //flatten
+  val num = List(List(1,3),List(2,4)).flatten
+
+  //flatten Map
+  val nums = List("at","as")
+  val newnums = nums.map(_.toUpperCase)
+  val flattennums = nums.flatMap(_.toUpperCase)
+}
+
+object UseArray extends App{
+  //flatten map value
+  println(impList.newnums)
+  println(impList.flattennums)
+}
+
 
 //see more details at https://docs.scala-lang.org/ about Array
