@@ -8,13 +8,7 @@ class Counter{
     value +=1
   }
   def current():Int = value
-
   //also can use setter and getter
-  def getvalue = value
-  def getvalue_ = (newValue : Int){
-    if(newValue > value) value - newValue
-  }
-
 }
 
 

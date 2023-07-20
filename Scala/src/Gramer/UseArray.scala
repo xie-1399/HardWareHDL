@@ -60,6 +60,7 @@ object impList{
   val nums = List("at","as")
   val newnums = nums.map(_.toUpperCase)
   val flattennums = nums.flatMap(_.toUpperCase)
+  //more function : https://www.runoob.com/scala/scala-lists.html
 }
 
 object UseArray extends App{
