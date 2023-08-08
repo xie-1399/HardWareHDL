@@ -13,8 +13,6 @@ class Stack[T]{
     elements = elements.tail
     current
   }
-
-
 }
 
 
@@ -25,7 +23,7 @@ object UseGenerics extends App{
   //Generics function
   def getMiddle[T](arr:Array[T]) = arr( arr.length / 2)
 
-  val func = getMiddle[String] _  //get the function
+  val func = getMiddle [String] _  //get the function
   val middle = func(Array("1","2","3"))
   println(middle)
 }
