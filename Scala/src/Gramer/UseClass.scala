@@ -13,8 +13,6 @@ class Counter{
 
 
 
-
-
 class UseClass {
   //use class is just a simple way
 }

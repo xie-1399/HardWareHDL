@@ -18,9 +18,6 @@ class CarryAdder(size:Int) extends Component{
   }
 }
 
-
-
-
 class Adder {
 
 }
