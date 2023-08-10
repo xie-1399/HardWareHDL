@@ -21,7 +21,8 @@ object UseMatching extends App{
   def simplify(expr: Expr):Expr = {
     expr match {
       case Unop("-", Unop("-", e)) => e
-      case Binop("+",e,Num(0)) if e == Num(0) => e //add some guards
+      case Binop("+",e,Num(0)) if e == Num(0) => e
+      //add some guards
       case _ => expr //must contain all cases
     }
   }
