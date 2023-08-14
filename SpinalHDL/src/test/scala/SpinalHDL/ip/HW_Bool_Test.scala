@@ -9,7 +9,7 @@ import scala.util.Random
 class HW_Bool_Test extends FunSuite{
   var compiled: SimCompiled[HW_Bool] = null
   test("compile") {
-    compiled = SpinalSimConfig().compile(new HW_Bool)
+    compiled = SpinalSimConfig().compile(new HW_Bool(false))
   }
 
   test("test bench") {

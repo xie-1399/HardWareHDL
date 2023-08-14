@@ -53,8 +53,41 @@ class flow extends Component{
   io.source <>  io.sink
 }
 
-object sourceTosink extends App{
-  SpinalVerilog(new stream)
+case class carryData() extends Bundle{
+  val data = Bits(10 bits)
+  val signal = Bool()
 }
 
+class controlStream extends Component{
+  val io = new Bundle {
+    val request = slave Stream (carryData())
+    val data = out Bits (10 bits)
+    val signal = out Bool()
+    val stall = out Bool()
+    val stop = in Bool()
+  }
+  //m2sPipe
+  val ms = io.request.m2sPipe()
+  ms.ready := True
 
+  io.stall := ms.isStall  //valid && !ready
+  io.data := ms.payload.data
+  io.signal := ms.payload.signal
+}
+
+//halt the request
+class haltStream extends Component{
+  val io = new Bundle{
+    val request = slave Stream (carryData())
+    val data = out Bits(10 bits)
+    val signal = out Bool()
+    val stall = out Bool()
+    val stop = in Bool()
+  }
+  val halt = io.request.haltWhen(io.stop)
+  halt.ready := True
+
+  io.stall := halt.isStall  //valid && !ready
+  io.data := halt.payload.data
+  io.signal := halt.payload.signal
+}

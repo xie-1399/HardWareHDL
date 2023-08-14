@@ -15,4 +15,14 @@ class Counter{
 
 class UseClass {
   //use class is just a simple way
+  def method(value:Int) = value + 1
+  val num = method(10)
+  def show() = {println(num)}
+}
+
+
+
+object UseClass extends App{
+  val c = new UseClass()
+  c.show()
 }
