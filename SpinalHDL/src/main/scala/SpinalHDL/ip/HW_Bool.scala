@@ -13,6 +13,7 @@ class HW_Bool(change:Boolean) extends Component {
   io.end := Mux(io.sel,io.start,False)
   val res = io.sel ? io.start | False
 
+
   //wrong if change = true will assign overloop
   val gen = change generate new Area {
     io.end := False
