@@ -15,7 +15,10 @@ class Template extends FunSuite{
     compiled.doSim(seed = 42){
       dut =>
         dut.clockDomain.forkStimulus(10)
-      //Todo write you test logic
+        //Todo write you test logic
+
+
+
     }
   }
 }
