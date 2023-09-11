@@ -1,13 +1,7 @@
 package ip
 
 import chisel3._
-
-//like flow in the spinal
-class Channel() extends Bundle{
-  //define the bundle like this
-  val valid = Bool()
-  val data = UInt(32.W)
-}
+import chisel3.util._
 /*
 lots of signal don't generate like constant value
 */
@@ -16,6 +10,8 @@ class BasicComponent extends Module {
     val a = Input(UInt(3.W))
     val b = Input(UInt(3.W))
     val c = Output(UInt(32.W))
+    val ctrl = Input(UInt(2.W))
+    val out = Output(UInt(32.W))
   })
 
   // basic type and constant
@@ -36,7 +32,7 @@ class BasicComponent extends Module {
   val or = io.a | io.b
   val xor = io.a ^ io.b
   val not = ~io.a
-  val add = io.a + io.b
+  val add = io.a +& io.b
   val sub = io.a - io.b
   val mul = io.a * io.b
   val div = io.a / io.b
@@ -63,6 +59,15 @@ class BasicComponent extends Module {
   ch.valid := true.B
   ch.data := 0.U
   io.c := add
+
+  io.out := 0.U
+  switch(io.ctrl){
+    is(0.U){io.out := io.a + io.b}
+    is(1.U){io.out := io.a * io.b}
+    is(2.U){io.out := io.a / io.b}
+    is(3.U){io.out := io.a & io.b}
+  }
+
 }
 
 object BasicComponent extends App{
