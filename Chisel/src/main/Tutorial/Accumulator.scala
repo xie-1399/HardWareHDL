@@ -22,7 +22,3 @@ class Accumulator extends Module {
   //  io.output := accumulator
   //  value := Mux(io.in === 1.U,value + 1.U,value)
 }
-
-object Accumulator extends App{
-  ChiselSim.Gen(new Accumulator)
-}

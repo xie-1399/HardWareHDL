@@ -26,7 +26,7 @@ class DefineCounter extends Module{
 
   def genCounter(n:Int) = {
     val cntReg = RegInit(0.U(8.W))
-    cntReg := Mux(cntReg === n,0.U,cntReg + 1.U)
+    cntReg := Mux(cntReg === n.U,0.U,cntReg + 1.U)
     cntReg
   }
 

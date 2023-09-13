@@ -15,5 +15,4 @@ class Adder(val w:Int) extends Module {
 
   // no need for the carry
   io.out := io.in0 + io.in1
-
 }
