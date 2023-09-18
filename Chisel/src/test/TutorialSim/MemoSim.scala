@@ -6,7 +6,6 @@ import org.scalatest.flatspec.AnyFlatSpec
 
 import scala.util.Random
 
-// Todo the test is not very strict
 class MemoSim extends AnyFlatSpec with ChiselScalatestTester {
   "Memo test" should "pass" in {
     test(new Memo).withAnnotations(Seq(WriteVcdAnnotation)) {
@@ -24,12 +23,13 @@ class MemoSim extends AnyFlatSpec with ChiselScalatestTester {
           dut.io.wrData.poke(data)
           dut.clock.step(1)
         }
+        for(idx <- 0 until 100){
+          val data = Random.nextInt(128)
+          val addr = Random.nextInt(128)
+          wr(addr, data)
+          rd(addr, data)
+        }
 
-        wr(0, 1)
-        rd(0, 1)
-        wr(9, 11)
-        rd(9, 11)
     }
   }
-
 }
